@@ -1,2 +1,3 @@
-# Konverter-Satuan
-Website Konverter Satuan by Muhammad Jais
+Simple JS Unit Converter
+
+[PREVIEW](https://almirbunjaku.github.io/Konverter-Satuan/)

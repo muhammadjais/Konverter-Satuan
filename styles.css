@@ -1,0 +1,150 @@
+* {
+  /* početni reset stila */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* boja pozadine */
+  background-color: whitesmoke;
+}
+
+input {
+  width: 180px;
+  height: 40px;
+  border: 1px solid #ffc107;
+  border-radius: 25px; /* zaobljeni uglovi polja */
+  padding: 20px;
+  -moz-box-sizing: content-box; /* Mozilla Firefox ima problem sa paddingom unutar polja za unos i ne dozvoljava unos bez ove osobine*/
+}
+
+input:focus {
+  outline: none; /* isključivanje default plave ivice fokusiranog polja */
+  border: 1px solid black;
+  background-color: #fff5d9;
+}
+
+body h1 {
+  text-align: center;
+  padding: 30px;
+  background-color: #ffc107;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ffa000;
+}
+
+body h3 {
+  text-align: center;
+  margin: 30px;
+}
+
+.jedinice {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 200px); /* 3 kolone veličine 200px */
+  grid-template-rows: repeat(3, 1fr); /* 3 reda veličine frakcijske jedinice */
+  grid-gap: 30px; /* razmak između svih elemenatar */
+  column-gap: 50px; /* razmak između kolona */
+}
+
+.kol-2 {
+  grid-template-rows: repeat(2, 1fr); /* 2 reda veličine frakcijske jedinice */
+  /* za kategorije sa manje od sedam mjernih jedinica */
+}
+
+.field {
+  display: flex;
+  flex-direction: column; /* label i polje su jedno ispod drugog */
+  align-items: center;
+  height: 100%;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.tabs button {
+  background-color: #ffecb3;
+  margin: 0 10px;
+  border: 1px solid #ffa000;
+  border-radius: 50px;
+  width: 100px;
+  outline: none;
+  cursor: pointer; /* kursor postaje kursor za linkove */
+  padding: 15px;
+}
+
+.tabs button:hover {
+  background-color: #ffc107;
+  /* promjena boje buttona kad kursor prelazi preko njega */
+}
+
+.tabs button.active {
+  background-color: #ffa000;
+  /* boja buttona koji je dobio aktivnu klasu od funkcije za promjenu tabova */
+}
+
+.tabdiv {
+  display: none; /* sadržaj svih tabova je sakriven */
+  text-align: center;
+}
+
+.tabdiv h3 {
+  text-align: center;
+  margin: 30px;
+}
+
+@media (max-width: 700px) {
+  /* stil za tablete */
+  .tabs {
+    width: 100vw; /* koristi širinu viewporta */
+    flex-wrap: wrap; /* tabovi se pri smanjenju viewporta prebacuju u novi red */
+  }
+
+  .tabs button {
+    margin-top: 20px;
+  }
+
+  .tabdiv {
+    width: 100vw;
+  }
+
+  input {
+    max-width: 180px; /* maksimalna širina */
+    width: 100%;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* ovim dijelom se uklanjaju strelice na poljima za unos kad su u pitanju tableti i mobiteli */
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    /* isti stil kao i prethodni, samo za Mozillu Firefox */
+    -moz-appearance: textfield;
+  }
+
+  .jedinice {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    margin: 20px;
+  }
+
+  label {
+    height: 100%; /* jednaka visina za sve labele */
+  }
+}
+
+@media (max-width: 400px) {
+  /* stil za mobitele */
+  .jedinice {
+    grid-template-columns: repeat(
+      1,
+      1fr
+    ); /* na mobitelima su sva polja za unos u koloni, jedno ispod drugog */
+  }
+}

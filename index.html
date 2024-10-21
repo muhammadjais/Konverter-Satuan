@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WD - Project Rekayasa Perangkat Lunak - Muhammad Jais</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Selamat Datang di Website Konverter Satuan</h1>
+
+    <!-- Početak tabova za promjenu kategorije -->
+    <div class="tabs">
+      <!-- Klikom na svaki tab se poziva funkcija za promjenu taba koja kao parametre uzima event koji je poziva i naziv kategorije -->
+      <button class="tabmenu" onclick="changeTab(event, 'panjang')">
+        Panjang
+      </button>
+      <button class="tabmenu" onclick="changeTab(event, 'masa')">Masa</button>
+      <button class="tabmenu" onclick="changeTab(event, 'volume')">
+        Volume
+      </button>
+      <button class="tabmenu" onclick="changeTab(event, 'permukaan')">
+        Permukaan
+      </button>
+      <button class="tabmenu" onclick="changeTab(event, 'kecepatan')">
+        Kecepatan
+      </button>
+      <button class="tabmenu" onclick="changeTab(event, 'tekanan')">
+        Tekanan
+      </button>
+    </div>
+    <!-- Kraj tabova za promjenu kategorije -->
+
+    <h3 id="izbor">Website Sederhana Muhammad Jais</h3>
+
+    <!-- Sadržaj kategorije za dužinu -->
+    <!-- Unos i promjena svakog polja pozivaju funkcije kojima se prosljeđuje trenutna vrijednost polja -->
+    <div id="panjang" class="tabdiv">
+      <h3>Panjang :</h3>
+      <div class="jedinice">
+        <div class="field">
+          <label for="metre">Metres (m)</label>
+          <input
+            type="number"
+            id="metre"
+            oninput="konMetre(this.value)"
+            onchange="konMetre(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="decimetre">Decimetres (dm)</label>
+          <input
+            type="number"
+            id="decimetre"
+            oninput="konDecimetre(this.value)"
+            onchange="konDecimetre(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="centimetre">Centimetres (cm)</label>
+          <input
+            type="number"
+            id="centimetre"
+            oninput="konCentimetre(this.value)"
+            onchange="konCentimetre(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="millimetre">Millimetres (mm)</label>
+          <input
+            type="number"
+            id="millimetre"
+            oninput="konMillimetre(this.value)"
+            onchange="konMillimetre(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="foot">Feet (ft)</label>
+          <input
+            type="number"
+            id="foot"
+            oninput="konFoot(this.value)"
+            onchange="konFoot(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="inch">Inches (in)</label>
+          <input
+            type="number"
+            id="inch"
+            oninput="konInch(this.value)"
+            onchange="konInch(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="yard">Yards (yd)</label>
+          <input
+            type="number"
+            id="yard"
+            oninput="konYard(this.value)"
+            onchange="konYard(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="mile">Miles (mi)</label>
+          <input
+            type="number"
+            id="mile"
+            oninput="konMile(this.value)"
+            onchange="konMile(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="kilometre">Kilometres (km)</label>
+          <input
+            type="number"
+            id="kilometre"
+            oninput="konKilometre(this.value)"
+            onchange="konKilometre(this.value)"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Sadržaj kategorije za masu -->
+    <div id="masa" class="tabdiv">
+      <h3>Masa :</h3>
+      <div class="jedinice">
+        <div class="field">
+          <label for="kilogram">Kilograms (kg)</label>
+          <input
+            type="number"
+            id="kilogram"
+            oninput="konKilogram(this.value)"
+            onchange="konKilogram(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="gram">Grams (g)</label>
+          <input
+            type="number"
+            id="gram"
+            oninput="konGram(this.value)"
+            onchange="konGram(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="milligram">Milligrams (mg)</label>
+          <input
+            type="number"
+            id="milligram"
+            oninput="konMilligram(this.value)"
+            onchange="konMilligram(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="tonne">Tonnes (t)</label>
+          <input
+            type="number"
+            id="tonne"
+            oninput="konTonne(this.value)"
+            onchange="konTonne(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="pound">Pounds (lbs)</label>
+          <input
+            type="number"
+            id="pound"
+            oninput="konPound(this.value)"
+            onchange="konPound(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="ounce">Ounces (oz)</label>
+          <input
+            type="number"
+            id="ounce"
+            oninput="konOunce(this.value)"
+            onchange="konOunce(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="stone">Stone (st)</label>
+          <input
+            type="number"
+            id="stone"
+            oninput="konStone(this.value)"
+            onchange="konStone(this.value)"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Sadržaj kategorije za volumen -->
+    <div id="volume" class="tabdiv">
+      <h3>Volume :</h3>
+      <div class="jedinice kol-2">
+        <div class="field">
+          <label for="cubicmetre">Cubic metres (m<sup>3</sup>)</label>
+          <input
+            type="number"
+            id="cubicmetre"
+            oninput="konCubicmetre(this.value)"
+            onchange="konCubicmetre(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="litre">Litres (l)</label>
+          <input
+            type="number"
+            id="litre"
+            oninput="konLitre(this.value)"
+            onchange="konLitre(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="millilitre">Millilitres (ml)</label>
+          <input
+            type="number"
+            id="millilitre"
+            oninput="konMillilitre(this.value)"
+            onchange="konMillilitre(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="gallon">Gallons (gal)</label>
+          <input
+            type="number"
+            id="gallon"
+            oninput="konGallon(this.value)"
+            onchange="konGallon(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="pint">Pints (pt)</label>
+          <input
+            type="number"
+            id="pint"
+            oninput="konPint(this.value)"
+            onchange="konPint(this.value)"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Sadržaj kategorije za površinu -->
+    <div id="permukaan" class="tabdiv">
+      <h3>Permukaan :</h3>
+      <div class="jedinice">
+        <div class="field">
+          <label for="squaremetre">Square metres (m<sup>2</sup>)</label>
+          <input
+            type="number"
+            id="squaremetre"
+            oninput="konSquaremetre(this.value)"
+            onchange="konSquaremetre(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="squarekilometre"
+            >Square kilometres (km<sup>2</sup>)</label
+          >
+          <input
+            type="number"
+            id="squarekilometre"
+            oninput="konSquarekilometre(this.value)"
+            onchange="konSquarekilometre(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="squarecentimetre"
+            >Square centimetres (cm<sup>2</sup>)</label
+          >
+          <input
+            type="number"
+            id="squarecentimetre"
+            oninput="konSquarecentimetre(this.value)"
+            onchange="konSquarecentimetre(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="squaremillimetre"
+            >Square millimetres (mm<sup>2</sup>)</label
+          >
+          <input
+            type="number"
+            id="squaremillimetre"
+            oninput="konSquaremillimetre(this.value)"
+            onchange="konSquaremillimetre(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="hectare">Hectares (ha)</label>
+          <input
+            type="number"
+            id="hectare"
+            oninput="konHectare(this.value)"
+            onchange="konHectare(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="acre">Acres (ac)</label>
+          <input
+            type="number"
+            id="acre"
+            oninput="konAcre(this.value)"
+            onchange="konAcre(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="squarefeet">Square feet (ft<sup>2</sup>)</label>
+          <input
+            type="number"
+            id="squarefeet"
+            oninput="konSquarefeet(this.value)"
+            onchange="konSquarefeet(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="squareinch">Square inches (in<sup>2</sup>)</label>
+          <input
+            type="number"
+            id="squareinch"
+            oninput="konSquareinch(this.value)"
+            onchange="konSquareinch(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="squaremile">Square miles (mi<sup>2</sup>)</label>
+          <input
+            type="number"
+            id="squaremile"
+            oninput="konSquaremile(this.value)"
+            onchange="konSquaremile(this.value)"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Sadržaj kategorije za brzinu -->
+    <div id="kecepatan" class="tabdiv">
+      <h3>Kecepatan :</h3>
+      <div class="jedinice kol-2">
+        <div class="field">
+          <label for="metrespersecond">Metres per second (m/s)</label>
+          <input
+            type="number"
+            id="metrespersecond"
+            oninput="konMetrespersecond(this.value)"
+            onchange="konMetrespersecond(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="kilometresperhour">Kilometres per hour (km/h)</label>
+          <input
+            type="number"
+            id="kilometresperhour"
+            oninput="konKilometresperhour(this.value)"
+            onchange="konKilometresperhour(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="milesperhour">Miles per hour (mi/h)</label>
+          <input
+            type="number"
+            id="milesperhour"
+            oninput="konMilesperhour(this.value)"
+            onchange="konMilesperhour(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="knot">Knots (kn)</label>
+          <input
+            type="number"
+            id="knot"
+            oninput="konKnot(this.value)"
+            onchange="konKnot(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="mach">Mach (M)</label>
+          <input
+            type="number"
+            id="mach"
+            oninput="konMach(this.value)"
+            onchange="konMach(this.value)"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Sadržaj kategorije za pritisak -->
+    <div id="tekanan" class="tabdiv">
+      <h3>Tekanan :</h3>
+      <div class="jedinice kol-2">
+        <div class="field">
+          <label for="pascal">Pascals (Pa)</label>
+          <input
+            type="number"
+            id="pascal"
+            oninput="konPascal(this.value)"
+            onchange="konPascal(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="kilopascal">Kilopascals (kPa)</label>
+          <input
+            type="number"
+            id="kilopascal"
+            oninput="konKilopascal(this.value)"
+            onchange="konKilopascal(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="bar">Bar (bar)</label>
+          <input
+            type="number"
+            id="bar"
+            oninput="konBar(this.value)"
+            onchange="konBar(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="psi">Psi (psi)</label>
+          <input
+            type="number"
+            id="psi"
+            oninput="konPsi(this.value)"
+            onchange="konPsi(this.value)"
+          />
+        </div>
+        <div class="field">
+          <label for="ksi">Ksi (ksi)</label>
+          <input
+            type="number"
+            id="ksi"
+            oninput="konKsi(this.value)"
+            onchange="konKsi(this.value)"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function changeTab(event, kategorija) {
+      // deklaracija bitnih varijabli (i za for petlje, tabdiv za uzimanje sadržaja kategorija, tabmenu za uzimanje buttona kategorija)
+      var i, tabdiv, tabmenu;
+
+      tabdiv = document.getElementsByClassName("tabdiv"); // tabdiv uzima niz svih elemenata sa tom klasom
+      for (i = 0; i < tabdiv.length; i++) {
+        tabdiv[i].style.display = "none"; // svi elementi klase tabdiv se sakrivaju zbog display: none;
+      }
+
+      tabmenu = document.getElementsByClassName("tabmenu"); // tabmenu uzima niz svih elemenata sa tom klasom
+      for (i = 0; i < tabmenu.length; i++) {
+        tabmenu[i].className = tabmenu[i].className.replace(" active", ""); // svim elementima sa klasom active se ona oduzima
+      }
+
+      document.getElementById(kategorija).style.display = "block"; // elementu koji ima id proslijeđene kategorije se uključuje display
+      event.currentTarget.className += " active"; // buttonu koji je pozvao funkciju se dodaje klasa active kako bi se znao trenutno aktivni tab
+
+      document.getElementById("izbor").style.display = "none"; // sakriva se h3 naslov sa tekstom "Izaberite kategoriju"
+    }
+
+    // sve naredne funkcije se bave konverzijom jedinica, pri čemu se svakom polju pristupa preko njegovog id-a i vrijednost se mijenja pomoću .value
+    // funkcije za konverziju kao ulazni parametar imaju vrijednost polja koje je pozvalo funkciju
+    function konMetre(vr) {
+      document.getElementById("decimetre").value = vr * 10;
+      document.getElementById("centimetre").value = vr * 100;
+      document.getElementById("millimetre").value = vr * 1000;
+      document.getElementById("foot").value = vr * 3.281;
+      document.getElementById("inch").value = vr * 39.37;
+      document.getElementById("yard").value = vr * 1.094;
+      document.getElementById("mile").value = vr * 0.000621;
+      document.getElementById("kilometre").value = vr * 0.001;
+    }
+
+    function konDecimetre(vr) {
+      document.getElementById("metre").value = vr / 10;
+      document.getElementById("centimetre").value = vr * 10;
+      document.getElementById("millimetre").value = vr * 100;
+      document.getElementById("foot").value = vr / 3.048;
+      document.getElementById("inch").value = vr * 3.937;
+      document.getElementById("yard").value = vr / 9.144;
+      document.getElementById("mile").value = vr / 16093;
+      document.getElementById("kilometre").value = vr / 10000;
+    }
+
+    function konCentimetre(vr) {
+      document.getElementById("metre").value = vr * 0.01;
+      document.getElementById("decimetre").value = vr * 0.1;
+      document.getElementById("millimetre").value = vr * 10;
+      document.getElementById("foot").value = vr / 30.48;
+      document.getElementById("inch").value = vr * 0.3937;
+      document.getElementById("yard").value = vr / 91.44;
+      document.getElementById("mile").value = vr / 160934;
+      document.getElementById("kilometre").value = vr / 100000;
+    }
+
+    function konMillimetre(vr) {
+      document.getElementById("metre").value = vr / 1000;
+      document.getElementById("decimetre").value = vr / 100;
+      document.getElementById("centimetre").value = vr / 10;
+      document.getElementById("foot").value = vr / 304.8;
+      document.getElementById("inch").value = vr / 25.4;
+      document.getElementById("yard").value = vr / 914.4;
+      document.getElementById("mile").value = vr / 1609340;
+      document.getElementById("kilometre").value = vr / 1000000;
+    }
+
+    function konFoot(vr) {
+      document.getElementById("metre").value = vr / 3.281;
+      document.getElementById("decimetre").value = vr * 3.048;
+      document.getElementById("centimetre").value = vr * 30.48;
+      document.getElementById("millimetre").value = vr * 304.8;
+      document.getElementById("inch").value = vr * 12;
+      document.getElementById("yard").value = vr / 3;
+      document.getElementById("mile").value = vr / 5280;
+      document.getElementById("kilometre").value = vr / 3281;
+    }
+
+    function konInch(vr) {
+      document.getElementById("metre").value = vr / 39.37;
+      document.getElementById("decimetre").value = vr / 3.937;
+      document.getElementById("centimetre").value = vr * 2.54;
+      document.getElementById("millimetre").value = vr * 25.4;
+      document.getElementById("foot").value = vr / 12;
+      document.getElementById("yard").value = vr / 36;
+      document.getElementById("mile").value = vr / 63360;
+      document.getElementById("kilometre").value = vr / 39370;
+    }
+
+    function konYard(vr) {
+      document.getElementById("metre").value = vr / 1.094;
+      document.getElementById("decimetre").value = vr * 9.144;
+      document.getElementById("centimetre").value = vr * 91.44;
+      document.getElementById("millimetre").value = vr / 914.4;
+      document.getElementById("foot").value = vr * 3;
+      document.getElementById("inch").value = vr * 36;
+      document.getElementById("mile").value = vr / 1760;
+      document.getElementById("kilometre").value = vr / 1094;
+    }
+
+    function konMile(vr) {
+      document.getElementById("metre").value = vr * 1609.34;
+      document.getElementById("decimetre").value = vr * 16093.4;
+      document.getElementById("centimetre").value = vr * 160934;
+      document.getElementById("millimetre").value = vr * 1609340;
+      document.getElementById("foot").value = vr * 5280;
+      document.getElementById("inch").value = vr * 63360;
+      document.getElementById("yard").value = vr * 1760;
+      document.getElementById("kilometre").value = vr * 1.60934;
+    }
+
+    function konKilometre(vr) {
+      document.getElementById("metre").value = vr * 1000;
+      document.getElementById("decimetre").value = vr * 10000;
+      document.getElementById("centimetre").value = vr * 100000;
+      document.getElementById("millimetre").value = vr * 1000000;
+      document.getElementById("foot").value = vr * 3281;
+      document.getElementById("inch").value = vr * 39370;
+      document.getElementById("yard").value = vr * 1094;
+      document.getElementById("mile").value = vr / 1.60934;
+    }
+
+    function konKilogram(vr) {
+      document.getElementById("gram").value = vr * 1000;
+      document.getElementById("milligram").value = vr * 1000000;
+      document.getElementById("tonne").value = vr / 1000;
+      document.getElementById("pound").value = vr * 2.205;
+      document.getElementById("ounce").value = vr * 35.274;
+      document.getElementById("stone").value = vr / 6.35;
+    }
+
+    function konGram(vr) {
+      document.getElementById("kilogram").value = vr / 1000;
+      document.getElementById("milligram").value = vr * 1000;
+      document.getElementById("tonne").value = vr / 1000000;
+      document.getElementById("pound").value = vr / 454;
+      document.getElementById("ounce").value = vr / 28.35;
+      document.getElementById("stone").value = vr / 6350;
+    }
+
+    function konMilligram(vr) {
+      document.getElementById("kilogram").value = vr / 1000000;
+      document.getElementById("gram").value = vr / 1000;
+      document.getElementById("tonne").value = vr / 1000000000;
+      document.getElementById("pound").value = vr / 453592;
+      document.getElementById("ounce").value = vr / 28350;
+      document.getElementById("stone").value = vr / 6350000;
+    }
+
+    function konTonne(vr) {
+      document.getElementById("kilogram").value = vr * 1000;
+      document.getElementById("gram").value = vr * 1000000;
+      document.getElementById("milligram").value = vr * 1000000000;
+      document.getElementById("pound").value = vr * 2205;
+      document.getElementById("ounce").value = vr * 35274;
+      document.getElementById("stone").value = vr * 157;
+    }
+
+    function konPound(vr) {
+      document.getElementById("kilogram").value = vr / 2.205;
+      document.getElementById("gram").value = vr * 454;
+      document.getElementById("milligram").value = vr * 453592;
+      document.getElementById("tonne").value = vr / 2205;
+      document.getElementById("ounce").value = vr * 16;
+      document.getElementById("stone").value = vr / 14;
+    }
+
+    function konOunce(vr) {
+      document.getElementById("kilogram").value = vr / 35.274;
+      document.getElementById("gram").value = vr * 28.35;
+      document.getElementById("milligram").value = vr * 28350;
+      document.getElementById("tonne").value = vr / 35274;
+      document.getElementById("pound").value = vr / 16;
+      document.getElementById("stone").value = vr / 224;
+    }
+
+    function konStone(vr) {
+      document.getElementById("kilogram").value = vr * 6.35;
+      document.getElementById("gram").value = vr * 6350;
+      document.getElementById("milligram").value = vr * 6350000;
+      document.getElementById("tonne").value = vr / 157;
+      document.getElementById("pound").value = vr * 14;
+      document.getElementById("ounce").value = vr * 224;
+    }
+
+    function konCubicmetre(vr) {
+      document.getElementById("litre").value = vr * 1000;
+      document.getElementById("millilitre").value = vr * 1000000;
+      document.getElementById("gallon").value = vr * 264;
+      document.getElementById("pint").value = vr * 1760;
+    }
+
+    function konLitre(vr) {
+      document.getElementById("cubicmetre").value = vr / 1000;
+      document.getElementById("millilitre").value = vr * 1000;
+      document.getElementById("gallon").value = vr / 3.785;
+      document.getElementById("pint").value = vr * 1.76;
+    }
+
+    function konMillilitre(vr) {
+      document.getElementById("cubicmetre").value = vr / 1000000;
+      document.getElementById("litre").value = vr * 1000;
+      document.getElementById("gallon").value = vr / 3785;
+      document.getElementById("pint").value = vr / 473;
+    }
+
+    function konGallon(vr) {
+      document.getElementById("cubicmetre").value = vr / 264;
+      document.getElementById("litre").value = vr * 3.785;
+      document.getElementById("millilitre").value = vr * 3785;
+      document.getElementById("pint").value = vr * 8;
+    }
+
+    function konPint(vr) {
+      document.getElementById("cubicmetre").value = vr / 2113;
+      document.getElementById("litre").value = vr / 2.113;
+      document.getElementById("millilitre").value = vr * 473;
+      document.getElementById("gallon").value = vr / 8;
+    }
+
+    function konSquaremetre(vr) {
+      document.getElementById("squarekilometre").value = vr / 1000000;
+      document.getElementById("squarecentimetre").value = vr * 10000;
+      document.getElementById("squaremillimetre").value = vr * 1000000;
+      document.getElementById("hectare").value = vr / 10000;
+      document.getElementById("acre").value = vr / 4047;
+      document.getElementById("squarefeet").value = vr * 10.764;
+      document.getElementById("squareinch").value = vr * 1550;
+      document.getElementById("squaremile").value = vr * 2590000;
+    }
+
+    function konSquarekilometre(vr) {
+      document.getElementById("squaremetre").value = vr * 1000000;
+      document.getElementById("squarecentimetre").value = vr * 10000000000;
+      document.getElementById("squaremillimetre").value = vr * 1000000000000;
+      document.getElementById("hectare").value = vr * 100;
+      document.getElementById("acre").value = vr * 247;
+      document.getElementById("squarefeet").value = vr * 10760000;
+      document.getElementById("squareinch").value = vr * 1550000000;
+      document.getElementById("squaremile").value = vr / 2.59;
+    }
+
+    function konSquarecentimetre(vr) {
+      document.getElementById("squaremetre").value = vr / 10000;
+      document.getElementById("squarekilometre").value = vr / 10000000000;
+      document.getElementById("squaremillimetre").value = vr * 100;
+      document.getElementById("hectare").value = vr / 100000000;
+      document.getElementById("acre").value = vr / 40470000;
+      document.getElementById("squarefeet").value = vr / 929;
+      document.getElementById("squareinch").value = vr / 6.452;
+      document.getElementById("squaremile").value = vr / 25900000000;
+    }
+
+    function konSquaremillimetre(vr) {
+      document.getElementById("squaremetre").value = vr / 1000000;
+      document.getElementById("squarekilometre").value = vr / 1000000000000;
+      document.getElementById("squarecentimetre").value = vr / 100;
+      document.getElementById("hectare").value = vr / 10000000000;
+      document.getElementById("acre").value = vr / 4047000000;
+      document.getElementById("squarefeet").value = vr / 92903;
+      document.getElementById("squareinch").value = vr / 645;
+      document.getElementById("squaremile").value = vr / 2590000000000;
+    }
+
+    function konHectare(vr) {
+      document.getElementById("squaremetre").value = vr * 10000;
+      document.getElementById("squarekilometre").value = vr / 100;
+      document.getElementById("squarecentimetre").value = vr * 100000000;
+      document.getElementById("squaremillimetre").value = vr * 10000000000;
+      document.getElementById("acre").value = vr * 2.471;
+      document.getElementById("squarefeet").value = vr * 107639;
+      document.getElementById("squareinch").value = vr * 15500000;
+      document.getElementById("squaremile").value = vr / 259;
+    }
+
+    function konAcre(vr) {
+      document.getElementById("squaremetre").value = vr * 4047;
+      document.getElementById("squarekilometre").value = vr / 247;
+      document.getElementById("squarecentimetre").value = vr * 40470000;
+      document.getElementById("squaremillimetre").value = vr * 4047000000;
+      document.getElementById("hectare").value = vr / 2.471;
+      document.getElementById("squarefeet").value = vr * 43560;
+      document.getElementById("squareinch").value = vr * 6273000;
+      document.getElementById("squaremile").value = vr / 640;
+    }
+
+    function konSquarefeet(vr) {
+      document.getElementById("squaremetre").value = vr / 10.764;
+      document.getElementById("squarekilometre").value = vr / 10760000;
+      document.getElementById("squarecentimetre").value = vr * 929;
+      document.getElementById("squaremillimetre").value = vr * 92903;
+      document.getElementById("hectare").value = vr / 107639;
+      document.getElementById("acre").value = vr / 43560;
+      document.getElementById("squareinch").value = vr * 144;
+      document.getElementById("squaremile").value = vr / 27880000;
+    }
+
+    function konSquareinch(vr) {
+      document.getElementById("squaremetre").value = vr / 1550;
+      document.getElementById("squarekilometre").value = vr / 1550000000;
+      document.getElementById("squarecentimetre").value = vr * 6.452;
+      document.getElementById("squaremillimetre").value = vr * 645;
+      document.getElementById("hectare").value = vr / 15500000;
+      document.getElementById("acre").value = vr / 6273000;
+      document.getElementById("squarefeet").value = vr / 144;
+      document.getElementById("squaremile").value = vr / 4014000000;
+    }
+
+    function konSquaremile(vr) {
+      document.getElementById("squaremetre").value = vr * 2590000;
+      document.getElementById("squarekilometre").value = vr * 2.59;
+      document.getElementById("squarecentimetre").value = vr * 25900000000;
+      document.getElementById("squaremillimetre").value = vr * 2590000000000;
+      document.getElementById("hectare").value = vr * 259;
+      document.getElementById("acre").value = vr * 640;
+      document.getElementById("squarefeet").value = vr * 27880000;
+      document.getElementById("squareinch").value = vr * 4014000000;
+    }
+
+    function konMetrespersecond(vr) {
+      document.getElementById("kilometresperhour").value = vr * 3.6;
+      document.getElementById("milesperhour").value = vr * 2.237;
+      document.getElementById("knot").value = vr * 1.944;
+      document.getElementById("mach").value = vr / 343;
+    }
+
+    function konKilometresperhour(vr) {
+      document.getElementById("metrespersecond").value = vr / 3.6;
+      document.getElementById("milesperhour").value = vr / 1.609;
+      document.getElementById("knot").value = vr / 1.852;
+      document.getElementById("mach").value = vr / 1235;
+    }
+
+    function konMilesperhour(vr) {
+      document.getElementById("metrespersecond").value = vr / 2.237;
+      document.getElementById("kilometresperhour").value = vr * 1.609;
+      document.getElementById("knot").value = vr / 1.151;
+      document.getElementById("mach").value = vr / 767;
+    }
+
+    function konKnot(vr) {
+      document.getElementById("metrespersecond").value = vr / 1.944;
+      document.getElementById("kilometresperhour").value = vr * 1.852;
+      document.getElementById("milesperhour").value = vr * 1.151;
+      document.getElementById("mach").value = vr / 667;
+    }
+
+    function konMach(vr) {
+      document.getElementById("metrespersecond").value = vr * 343;
+      document.getElementById("kilometresperhour").value = vr * 1235;
+      document.getElementById("milesperhour").value = vr * 767;
+      document.getElementById("knot").value = vr * 667;
+    }
+
+    function konPascal(vr) {
+      document.getElementById("kilopascal").value = vr / 1000;
+      document.getElementById("bar").value = vr / 100000;
+      document.getElementById("psi").value = vr / 6895;
+      document.getElementById("ksi").value = vr / 6895000;
+    }
+
+    function konKilopascal(vr) {
+      document.getElementById("pascal").value = vr * 1000;
+      document.getElementById("bar").value = vr / 100;
+      document.getElementById("psi").value = vr / 6.895;
+      document.getElementById("ksi").value = vr / 6895;
+    }
+
+    function konBar(vr) {
+      document.getElementById("pascal").value = vr * 100000;
+      document.getElementById("kilopascal").value = vr * 100;
+      document.getElementById("psi").value = vr * 14.504;
+      document.getElementById("ksi").value = vr / 68.948;
+    }
+
+    function konPsi(vr) {
+      document.getElementById("pascal").value = vr * 6895;
+      document.getElementById("kilopascal").value = vr * 6.895;
+      document.getElementById("bar").value = vr / 14.504;
+      document.getElementById("ksi").value = vr / 1000;
+    }
+
+    function konKsi(vr) {
+      document.getElementById("pascal").value = vr * 6895000;
+      document.getElementById("kilopascal").value = vr * 6895;
+      document.getElementById("bar").value = vr * 68.948;
+      document.getElementById("psi").value = vr * 1000;
+    }
+  </script>
+</html>
